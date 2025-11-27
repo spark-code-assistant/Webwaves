@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Health Wallah</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Health Wallah</h1>
+      <p class="author">By Atharv Negi — Class 11C</p>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#bmi">BMI</a>
+        <a href="#tips">Tips</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="btn subtle">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Healthy choices. Practical guidance.</h2>
+          <p class="lead">Health Wallah helps you track fitness progress, calculate body metrics, and discover medically-informed wellness tips.</p>
+          <a class="btn primary" href="#bmi">Check your BMI</a>
+        </div>
+        <div class="hero-illustration">
+          <div class="card hero-card">
+            <h3>Quick Stats</h3>
+            <ul class="mini-stats">
+              <li>Personalized plans</li>
+              <li>Verified health resources</li>
+              <li>Daily wellness tips</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container features">
+      <h3 class="section-title">What FitCare Offers</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Fitness Plans</h4>
+          <p>Beginner to advanced routines with clear instructions and progress tracking suggestions.</p>
+        </article>
+        <article class="card">
+          <h4>Medical Guidance</h4>
+          <p>Evidence-based information and resources to help you make safer choices for your health.</p>
+        </article>
+        <article class="card">
+          <h4>Nutrition Tips</h4>
+          <p>Balanced meal ideas and hydration reminders tailored for activity levels.</p>
+        </article>
+      </div>
+    </section>
+    <section id="services" class="container services">
+      <h3 class="section-title">Services we can provide <small class="coming-note">comming in future if aarav makes me win ;)</small></h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Personalized Plans</h4>
+          <p>Beginner-friendly workout plans and progress check-ins you can follow at home.</p>
+        </article>
+        <article class="card">
+          <h4>Nutrition Guidance</h4>
+          <p>Easy meal ideas, hydration advice, and how to balance macros for energy.</p>
+        </article>
+        <article class="card">
+          <h4>Home Exercise Videos</h4>
+          <p>Short guided sessions you can do without equipment — clear steps and timing tips.</p>
+        </article>
+        <article class="card">
+          <h4>Local Medical Resources</h4>
+          <p>Links to verified resources and guidance on when to seek a doctor.</p>
+        </article>
+      </div>
+
+      <div class="grid" style="margin-top:18px;">
+        <article class="card water-widget">
+          <h4>Water Tracker</h4>
+          <p class="small muted">Set your daily goal and log glasses to track progress.</p>
+          <div class="water-controls">
+            <input id="waterGoal" type="number" placeholder="Goal (ml)" min="100" step="50">
+            <button id="setWaterGoal" class="btn subtle">Set Goal</button>
+          </div>
+          <div class="water-log" style="margin-top:10px;display:flex;gap:8px;align-items:center;">
+            <button id="addGlass" class="btn primary">Add Glass (+250ml)</button>
+            <div id="waterStatus" class="muted small">No goal set</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tips" class="container tips">
+      <h3 class="section-title">Daily Wellness Tips</h3>
+      <div class="tip-card card">
+        <p id="tipText">Stay hydrated — drink a glass of water before each meal.</p>
+        <div class="tip-controls">
+          <button id="prevTip" class="btn subtle">◀</button>
+          <button id="nextTip" class="btn subtle">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3 class="section-title">Get In Touch</h3>
+      <form id="contactForm" class="card contact-card">
+        <label>Name
+          <input type="text" id="name" required>
+        </label>
+        <label>Email
+          <input type="email" id="email" required>
+        </label>
+        <label>Message
+          <textarea id="message" rows="4" required></textarea>
+        </label>
+        <div class="bmi-actions">
+          <button type="submit" class="btn primary">Send</button>
+        </div>
+        <p id="contactStatus" class="muted"></p>
+      </form>
+    </section>
+
+    <!-- BMI moved to the end as requested -->
+    <section id="bmi" class="container bmi-section">
+      <h3 class="section-title">BMI Calculator</h3>
+      <div class="bmi-grid">
+        <form id="bmiForm" class="card bmi-card" aria-label="BMI calculator">
+          <label>Weight (kg)
+            <input type="number" id="weight" min="20" max="500" step="0.1" required>
+          </label>
+          <label>Height (cm)
+            <input type="number" id="height" min="50" max="250" step="0.1" required>
+          </label>
+          <div class="bmi-actions">
+            <button type="submit" class="btn primary">Calculate</button>
+            <button type="button" id="bmiReset" class="btn subtle">Reset</button>
+          </div>
+          <p id="bmiResult" class="muted">Enter your details to see results.</p>
+        </form>
+
+        <div class="card bmi-info">
+          <h4>Interpreting BMI</h4>
+          <ul>
+            <li><strong>Underweight:</strong> &lt; 18.5</li>
+            <li><strong>Normal:</strong> 18.5–24.9</li>
+            <li><strong>Overweight:</strong> 25–29.9</li>
+            <li><strong>Obesity:</strong> ≥ 30</li>
+          </ul>
+          <p class="small">BMI is a screening tool, not a diagnosis. For personalized medical advice, consult a healthcare professional.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Web Weave — FitCare. Built by Atharv Negi, Class 11C.</p>
+      <p class="muted small">This site provides educational information and is not medical advice, Agr jitta to or chize add krunga:).</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

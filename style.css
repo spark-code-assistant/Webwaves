@@ -1,0 +1,108 @@
+
+/* idhr dark theme default hai, presentation/phone friendly */
+:root{
+	--bg:#0f1720;
+	--card:#0b1220;
+	--text:#e6eef2;
+	--muted:#9fb3bd;
+	--accent:#3ad78a;
+	--accent-2:#4cc8ff;
+	--glass: rgba(255,255,255,0.03);
+	--radius:12px;
+	--shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:linear-gradient(180deg,var(--bg),#eef5f9);
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.45;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:28px}
+
+.site-header{background:transparent;padding:14px 0}
+.header-inner{display:flex;align-items:center;gap:18px}
+.brand{font-family:Rubik,Inter, sans-serif;margin:0;font-size:1.15rem}
+.accent{color:var(--accent)}
+
+/* idhr header me chhota author credit */
+.author{margin:0 0 0 12px;color:var(--muted);font-size:0.9rem}
+
+.nav{margin-left:auto;display:flex;gap:12px}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+
+.btn{font-weight:600;border:0;padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;box-shadow:var(--shadow)}
+.btn.subtle{background:transparent;color:var(--muted);border:1px solid rgba(0,0,0,0.06)}
+
+.hero{padding:48px 0}
+.hero-inner{display:flex;gap:28px;align-items:stretch}
+.hero-copy{flex:1}
+.lead{color:var(--muted);max-width:48ch}
+.hero-illustration{width:320px}
+.hero-card{padding:18px}
+.mini-stats{list-style:none;padding:0;margin:8px 0 0}
+.mini-stats li{padding:6px 0;color:var(--muted)}
+
+.features{padding-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+.card h4{margin-top:0}
+
+.coming-note{float:right;font-size:0.8rem;color:var(--muted);font-style:italic}
+
+.water-widget input{width:120px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)}
+.water-controls{display:flex;gap:8px;align-items:center}
+.water-log .btn.primary{padding:8px 10px}
+.water-log #waterStatus{min-width:140px}
+
+.section-title{margin:8px 0 18px;font-size:1.05rem}
+
+.bmi-section{padding:18px 0}
+.bmi-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+.bmi-card label{display:block;margin-bottom:12px;font-weight:600}
+.bmi-card input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2}
+.bmi-actions{display:flex;gap:8px;align-items:center;margin-top:6px}
+.bmi-info .small{color:var(--muted);font-size:0.9rem}
+
+.tips{padding:18px 0}
+.tip-card{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tip-controls{display:flex;gap:6px}
+
+.contact-card label{display:block;margin-bottom:12px}
+.contact-card input,.contact-card textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2}
+
+.muted{color:var(--muted)}
+.small{font-size:0.85rem}
+
+.site-footer{padding:18px 0;margin-top:28px;background:transparent}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+/* responsive tweaks - mobile pe thoda change */
+@media (max-width:880px){
+	.hero-inner{flex-direction:column}
+	.hero-illustration{width:100%}
+	.bmi-grid{grid-template-columns:1fr}
+	.footer-inner{flex-direction:column;text-align:center}
+}
+
+/* thoda polish for focus */
+input:focus,textarea:focus,button:focus{outline:3px solid rgba(0,163,255,0.12);outline-offset:2px}
+
+/* light mode variables (agar user toggle kare to) */
+:root.light{
+	--bg:#f7f9fb;
+	--card:#ffffff;
+	--text:#122028;
+	--muted:#5b6b71;
+	--accent:#2bb673;
+	--accent-2:#00a3ff;
+	--glass: rgba(255,255,255,0.6);
+}
+
